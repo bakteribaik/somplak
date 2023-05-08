@@ -61,6 +61,53 @@
         .content-button{
             margin-top: 30px;
         }
+
+        .founder-title{
+            text-align: center;
+            font-size: 1.5em;
+            margin-top: 150px;
+        }
+        .founder-container{
+            margin-top: 30px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        #founder{
+            display: flex;
+            gap: 30px;
+        }
+        .founder{
+            text-align: center;
+        }
+        .founder-avatar-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .founder-avatar{
+            height: 90px;
+            width: 90px;
+            border: 5px solid #3b4874;
+            background-size: cover;
+            object-fit: cover;
+            border-radius: 200px;
+            transition: .2s;
+        }
+        .founder-avatar:hover{
+            transform: scale(1.1)
+        }
+        .discord-tag{
+            margin-top: 10px;
+            color: #3b4874;
+        }
+        .discord-name{
+            font-weight: bold;
+            color: #3b4874;
+        }
+
+
         .footer{
             position: absolute;
             bottom: 40px;
@@ -90,8 +137,68 @@
             <a href="https://discord.gg/YJSHM5jSgH" class="discord">Join Now</a>
         </div>
     </div>
+    <div class="founder-title">Somplak Community Founder</div>
+    <div class="founder-container">
+        <div id="founder"></div>
+    </div>
     <div class="footer">
         <div class="footer-title">Made with 💖 by Zed#8387 on discord</div>
     </div>
 </body>
+<script>
+    var founder = [
+        {
+            "name" : "Zulfikar Alwi",
+            "discord_tag" : "Zed#8387",
+            "profileImage" : 'assets/avatar/avatar_zul.PNG'
+        },
+        {
+            "name" : "Judin Sirad",
+            "discord_tag" : "Judin#5108",
+            "profileImage" : 'assets/avatar/avatar_judin.PNG'
+        },
+        {
+            "name" : "Dimas Agung",
+            "discord_tag" : "Dim's#1664",
+            "profileImage" : 'assets/avatar/avatar_dimas.PNG'
+        },
+        {
+            "name" : "Nasri",
+            "discord_tag" : "Nasri#0181",
+            "profileImage" : 'assets/avatar/avatar_nasri.PNG'
+        },
+        {
+            "name" : "Andre Pratama",
+            "discord_tag" : "parjomeister#3279",
+            "profileImage" : 'assets/avatar/avatar_andre.PNG'
+        },
+        {
+            "name" : "Mr. Julianto",
+            "discord_tag" : "ѕιℓєηт#5043",
+            "profileImage" : 'assets/avatar/avatar_julianto.PNG'
+        },
+        {
+            "name" : "Ari Setiawan",
+            "discord_tag" : "Aerysz#1031",
+            "profileImage" : 'assets/avatar/avatar_ari.PNG'
+        },
+    ];
+
+    var html = '';
+    var container = document.getElementById('founder');
+
+    founder.map(_user => {
+        html += `
+            <div class='founder'>
+                <div class="founder-avatar-container">
+                    <div class="founder-avatar" style="background-image: url('${_user.profileImage}');"></div>
+                </div>
+                <div class="discord-tag">${_user.discord_tag}</div>
+                <div class="discord-name">${_user.name}</div>
+            </div>
+        `
+    });
+
+    container.innerHTML = html;
+</script>
 </html>
