@@ -77,6 +77,9 @@
         #founder{
             display: flex;
             gap: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
         .founder{
             text-align: center;
@@ -96,7 +99,7 @@
             transition: .2s;
         }
         .founder-avatar:hover{
-            transform: scale(1.1)
+            transform: scale(1.1);
         }
         .discord-tag{
             margin-top: 10px;
@@ -114,6 +117,33 @@
             width: 99%;
             text-align: center;
         }
+
+        @media screen and (max-width: 600px) {
+            .footer{
+                visibility: hidden;
+            }
+            .navbar{
+                visibility: hidden;
+            }
+            .discord-tag{
+                color: white;
+            }
+            .discord-name{
+                color: white;
+            }
+        }
+        
+        @media screen and (max-width: 1024px) {
+            .footer{
+                visibility: hidden;
+            }
+        }
+
+        @media screen and (max-width: 1440px) {
+            .footer{
+                visibility: hidden;
+            }
+        }
     </style>
 </head>
 <body style="background-image: url('./assets/images/bg.jpg'); background-size: auto; background-repeat: no-repeat;">
@@ -122,7 +152,7 @@
             Somplak Official Website
             <div class="navbar-items">
                 <a href="https://discord.gg/YJSHM5jSgH" class="discord">Join Community</a>
-                <a href="">About us</a>
+                <a href="" style="cursor: no-drop;">About us</a>
             </div>
         </span>
     </div>
@@ -131,7 +161,7 @@
             Lets build some good community<br>Together 😁
         </div>
         <div class="content-subtitle">
-            Join our discord community with click button down below
+            Join our <b>discord community</b> with<br>click button down below
         </div>
         <div class="content-button">
             <a href="https://discord.gg/YJSHM5jSgH" class="discord">Join Now</a>
