@@ -99,7 +99,9 @@
             transition: .2s;
         }
         .founder-avatar:hover{
-            transform: scale(1.1);
+            transform: scale(3);
+            box-shadow: 0px 0px 10px #ffffff;
+            border: 3px solid #f7f7f7;
         }
         .discord-tag{
             margin-top: 10px;
@@ -180,37 +182,44 @@
         {
             "name" : "Zulfikar Alwi",
             "discord_tag" : "Zed#8387",
-            "profileImage" : 'assets/avatar/avatar_zul.PNG'
+            "profileImage" : 'assets/avatar/avatar_zul.PNG',
+            "instagram" : 'https://www.instagram.com/zulfikaralwilubis/'
         },
         {
             "name" : "Judin Sirad",
             "discord_tag" : "Judin#5108",
-            "profileImage" : 'assets/avatar/avatar_judin.PNG'
+            "profileImage" : 'assets/avatar/avatar_judin.PNG',
+            "instagram" : 'https://www.instagram.com/judin.sirad/'
         },
         {
             "name" : "Dimas Agung",
             "discord_tag" : "Dim's#1664",
-            "profileImage" : 'assets/avatar/avatar_dimas.PNG'
+            "profileImage" : 'assets/avatar/avatar_dimas.PNG',
+            "instagram" : 'https://www.instagram.com/dims.pratama13/'
         },
         {
             "name" : "Nasri",
             "discord_tag" : "Nasri#0181",
-            "profileImage" : 'assets/avatar/avatar_nasri.PNG'
+            "profileImage" : 'assets/avatar/avatar_nasri.PNG',
+            "instagram" : 'https://www.instagram.com/nasrissnas26/'
         },
         {
             "name" : "Andre Pratama",
             "discord_tag" : "parjomeister#3279",
-            "profileImage" : 'assets/avatar/avatar_andre.PNG'
+            "profileImage" : 'assets/avatar/avatar_andre.PNG',
+            "instagram" : 'https://www.instagram.com/woy.ndre/'
         },
         {
             "name" : "Mr. Julianto",
             "discord_tag" : "ѕιℓєηт#5043",
-            "profileImage" : 'assets/avatar/avatar_julianto.PNG'
+            "profileImage" : 'assets/avatar/avatar_julianto.PNG',
+            "instagram" : 'https://www.instagram.com/mrjulianto/'
         },
         {
             "name" : "Ari Setiawan",
             "discord_tag" : "Aerysz#1031",
-            "profileImage" : 'assets/avatar/avatar_ari.PNG'
+            "profileImage" : 'assets/avatar/avatar_ari.PNG',
+            "instagram" : 'https://www.instagram.com/arisetiawa.n/'
         },
     ];
 
@@ -221,7 +230,9 @@
         html += `
             <div class='founder'>
                 <div class="founder-avatar-container">
-                    <div class="founder-avatar" style="background-image: url('${_user.profileImage}');"></div>
+                    <a href="${_user.instagram}" target=”_blank”>
+                        <div class="founder-avatar" style="background-image: url('${_user.profileImage}');"></div>
+                    </a>
                 </div>
                 <div class="discord-tag">${_user.discord_tag}</div>
                 <div class="discord-name">${_user.name}</div>
