@@ -102,6 +102,7 @@
             transform: scale(3);
             box-shadow: 0px 0px 10px #ffffff;
             border: 3px solid #f7f7f7;
+            cursor: pointer;
         }
         .discord-tag{
             margin-top: 10px;
@@ -226,13 +227,11 @@
     var html = '';
     var container = document.getElementById('founder');
 
-    founder.map(_user => {
+    founder.map((_user, index) => {
         html += `
             <div class='founder'>
                 <div class="founder-avatar-container">
-                    <a href="${_user.instagram}" target=”_blank”>
-                        <div class="founder-avatar" style="background-image: url('${_user.profileImage}');"></div>
-                    </a>
+                    <div class="founder-avatar" style="background-image: url('${_user.profileImage}');" onclick="playAudio('${index}');" onmouseout="stopAudio();"'></div>
                 </div>
                 <div class="discord-tag">${_user.discord_tag}</div>
                 <div class="discord-name">${_user.name}</div>
@@ -241,5 +240,26 @@
     });
 
     container.innerHTML = html;
+</script>
+<script>
+    var currentAudio = null;
+
+    function playAudio(parameter){
+        console.log(currentAudio)
+
+        if (currentAudio !== null) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+        }
+
+        var audio = new Audio(`assets/audio/${parseInt(parameter)+1}.mp3`);
+        currentAudio = audio;
+        audio.volume = 0.1
+        audio.play()
+    }
+    function stopAudio(){
+        currentAudio.pause()
+        currentAudio.currentTime = 0;
+    }
 </script>
 </html>
